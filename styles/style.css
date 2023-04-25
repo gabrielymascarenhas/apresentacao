@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root { /* :root É PARA ARMAZENAR VARIÁVEIS, TODA VARIÁVEL TEM QUE COMEÇAR COM -- */ 
+    --cor-primaria: #000000;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciara: #22D4FD;
+    --cor-hover: #272727;
+
+    --font-primaria: 'Krona One', sans-serif;
+    --font-secundaria: 'Montserrat', sans-serif;
+}
+
+*{
+    margin: 0; /* margin MARGEM */ /* RESETA A MARGEM  */
+    padding: 0; /* padding PREENCHIMENTO */ /* RESETA O PREENCHIMENTO */
+}
+body {
+    /*height: 100vh;*/ /* height ALTURA */ /* vh VIEWPORT - JANELA DE EXIBIÇÃO */ /* PARA QUE A ALTURA DA PÁG OCUPE 100% DA TELA */
+    box-sizing: border-box; /* box-sizing DIMENCIONAMENTO DE CAIXA */ /* PARA QUE NENHUM ELEMENTO FILHO SAIA DE DENTRO DE UM ELEMENTO PAI */
+    background-color: var(--cor-primaria); /* COR DE FUNDO */
+    color: var(--cor-secundaria); /* COR DO TEXTO */ /* var CHAMA UMA VARIÁVEL */ 
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15%; /*preenchimento superior, direito, inferior, esquerdo */
+
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--font-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-terciara);
+    text-decoration: none;
+}
+
+.apresentacao {
+    padding:5% 15%; /* RESPONSÁVEL POR DEFINIR ENTRE UM CONTEÚDO E SUAS BORDAS */
+    display: flex; /* O ELEMENTO SE TORNA UM FLEX CONTAINER, E PARTIR DAÍ PODEMOS MANIPULAR TODOS OS ELEMENTOS FILHOS DESSE FLEX CONTAINER COM PROPRIEDADES NOVAS */
+    align-items: center; /* ITENS DE ALINHAMENTO */
+    justify-content: space-between; /* ALINHAMENTO AO LONGO DO EIXO PRINCIPAL */
+    gap: 82px;
+}
+
+.apresentacao__conteudo {
+    width: 55%; /* LARGURA */
+    display: flex;
+    flex-direction: column; /* DIREÇÃO FLEXÍVEL - ESTABELECE O EIXO PRINCIPAL, DEFININDO A DIREÇÃO EM QUE OS ITENS SÃO COLOCADOR NO CONTAINER */
+    gap: 40px; /* DEFINE OS ESPAÇOS ENTRE AS LINHAS (row) E/OU COLUNAS(column) */
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem; /*36px;*/ /* TAMANHO DA FONTE */ /* TRANSFORMANDO px EM rem 36px/16 = 2,25*/
+    font-family: var(--font-primaria); /* FAMÍLIA DE FONTES */
+    
+}
+
+.titulo-destaque {
+    color: var(--cor-terciara);
+}
+
+.apresentacao__conteudo__paragrafo {
+    font-size: 1.5rem;
+    font-family: var(--font-secundaria);
+}
+
+.apresentacao__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo {
+    font-family: var(--font-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__botoes {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--cor-terciara);
+    border-radius: 8px;
+    width: 65%;
+    text-align: center; /* ALINHAMENTO DE TEXTO */
+    border-radius: 8px; /* RAIO DA BORDA */
+    font-size: 1.5rem;
+    font-weight: 600; /* ESPESSURA DA FONTE */
+    padding: 21.5px 0;
+    text-decoration: none; /* RETIRA O SUBLINHADO */
+    color: var(--cor-secundaria);
+    font-family: var(--font-secundaria);
+
+}
+
+.apresentacao__links__botoes:hover {  /* hover: SELECIONA E ESTILIZA UM LINK AO PASSAR O MOUSE SOBRE ELE' */
+    background-color: var(--cor-hover);
+}
+
+.apresentacao__imagem {
+    width: 43%;
+    border: 0.25rem solid var(--cor-terciara); /* BORDA */
+  }
+
+.icon {
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+    font-size: 30px;
+    background-color: var(--cor-terciara);
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 3px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    z-index: 100;
+    box-shadow: 2px 2px 2px #c0bdbd;
+  }
+  
+.icon .fab{
+    padding-top: 9px;
+  }
+  
+.icon:hover{
+    background-color: #fff;
+    color: var(--cor-terciara);
+    font-weight: 900;
+    box-shadow: 2px 2px 20px var(--cor-terciara);
+  }
+
+.rodape {
+    padding: 24px;
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciara);
+    text-align: center;
+    font-family: var(--font-secundaria);
+    font-size: 1,125rem;
+    font-weight: 400;
+ 
+}
+
+@media (max-width: 1200px) /* media query LIMITA O ESCOPO DAS FOLHAS DE ESTILO USANDO media features, COMO LARGURA, ALTURA E COR */
+/* OBS: USAR PARENTESE EM VEZ DE CHAVE INDICA UMA CONDIÇÃO */
+{
+    .cabecalho {
+        padding: 10%;
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+    flex-direction: column-reverse;
+    padding: 5%;
+   } 
+
+   .apresentacao__conteudo {
+    width: auto; /* auto, O BROWSER DARÁ UMA MARGEM AUTOMÁTICA PARA TODOS OS LADOS OU UTILIZAR width:100% */
+   }
+}
+
+    .img {
+    width: 100%;
+  }
