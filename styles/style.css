@@ -107,7 +107,8 @@ body {
 
 .apresentacao__imagem {
     width: 43%;
-    border: 0.25rem solid var(--cor-terciara); /* BORDA */
+    border: 0.22rem solid var(--cor-terciara); /* BORDA */
+    object-fit: cover;
   }
 
 .icon {
